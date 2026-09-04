@@ -11,5 +11,4 @@ valueSquared = value_as_integer_ ** 2
 print ("You entered:", value_as_integer)
 print("The square of the number is:", valueSquared)
 
-print(f"You entered: (value_as_integer), and the square of the numbr is: (valueSquared)")
-
+print(f"You entered: (value_as_integer), and the square of the number is: (valueSquared)")
