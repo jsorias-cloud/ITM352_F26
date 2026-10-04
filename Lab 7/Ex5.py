@@ -11,3 +11,15 @@ celebs_dict = {"celebs": celeb_list, "ages": age_list}
 print(celeb_list)
 
 
+celebs = ("Lara", "Sophia", "Manon", "Megan", "Daniela", "Yoonchae")
+ages = (20, 22, 23, 20, 21, 19)
+ 
+celebList = list(celebs)
+ageList = list(ages)
+ 
+celebDictionary = {
+"celebs": celebList,
+"ages": ageList
+}
+ 
+print(celebDictionary)
