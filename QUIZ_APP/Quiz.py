@@ -5,8 +5,6 @@
 #   Features
 #   Requirement 1  - Score history is written to a file (scores.json)
 #   Requirement 10 - 50/50 lifeline, usable once per game
-#   Extra credit   - User login, per-user high score, grand champion
-#   Extra extra    - Questions can include an image/video (file path or URL)
 
 #   Files used:
 #   questions.json - the quiz questions, grouped by category
