@@ -1,0 +1,41 @@
+{
+    "users": {
+        "jsorias": {
+            "password": "123456",
+            "high_score": 3,
+            "history": [
+                {
+                    "category": "K-POP",
+                    "score": 3,
+                    "total": 5
+                },
+                {
+                    "category": "Art",
+                    "score": 0,
+                    "total": 5
+                },
+                {
+                    "category": "Movies",
+                    "score": 2,
+                    "total": 5
+                }
+            ]
+        },
+        "jjoreo": {
+            "password": "1234567",
+            "high_score": 0,
+            "history": []
+        },
+        "joleo": {
+            "password": "123456789",
+            "high_score": 1,
+            "history": [
+                {
+                    "category": "K-POP",
+                    "score": 1,
+                    "total": 5
+                }
+            ]
+        }
+    }
+}

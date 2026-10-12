@@ -1,0 +1,137 @@
+{
+  "K-POP": {
+    "Which girl group made history in 2023 by becoming the first K-pop group to headline Coachella Valley Music and Arts Festival?": {
+      "answers": [
+        "BLACKPINK",
+        "TWICE",
+        "AESPA",
+        "NewJeans"
+      ]
+    },
+    "What is the name of the official fandom for the group BTS?": {
+      "answers": [
+        "ARMY",
+        "ENGENE",
+        "Bunnies",
+        "Once"
+      ]
+    },
+    "Who released the the record-breaking global smash hit Gangnam Style on Youtube in 2012?": {
+      "answers": [
+        "PSY",
+        "JYP",
+        "JESSI",
+        "EXO"
+      ]
+    },
+    "Which member of BTS became the first solo K-pop artist to debut at number one on the US Billboard Hot 100 with their official solo single: Seven?": {
+      "answers": [
+        "Jungkook",
+        "Jimin",
+        "J-hope",
+        "Jin"
+      ]
+    },
+    "What is name of the biggest boy group (in terms of number of members) under SM Entertainment?": {
+      "answers": [
+        "NCT",
+        "GOT7",
+        "The Boyz",
+        "SEVENTEEN"
+      ]
+    },
+    "Which fourth-generation girl group released the viral hit songs Super Shy and Hype Boy in 2023?": {
+      "answers": [
+        "NewJeans",
+        "Red Velvet",
+        "IVE",
+        "KiiKii"
+      ]
+    }
+  },
+  "Art": {
+    "The Last Supper was painted by which artist?": {
+      "answers": [
+        "da Vinci",
+        "Michelangelo",
+        "Raphael",
+        "Caravaggio"
+      ]
+    },
+    "Who painted 'Guernica'?": {
+      "answers": [
+        "Pablo Picasso",
+        "Salvador Dali",
+        "Joan Miro",
+        "Henri Matisse"
+      ]
+    },
+    "Who painted 'The Persistence of Memory'?": {
+      "answers": [
+        "Salvador Dali",
+        "Rene Magritte",
+        "Max Ernst",
+        "Frida Kahlo"
+      ]
+    },
+    "Who painted 'Girl with a Pearl Earring'?": {
+      "answers": [
+        "Johannes Vermeer",
+        "Rembrandt",
+        "Frans Hals",
+        "Jan van Eyck"
+      ]
+    },
+    "Who painted Starry Night?": {
+      "answers": [
+        "Vincent van Gogh",
+        "Claude Monet",
+        "Paul Cezanne",
+        "Edvard Munch"
+      ]
+      
+    }
+  },
+  "Movies": {
+    "In the 2003 Pixar movie: Finding Nemo, what type of fish is the main character Nemo?": {
+      "answers": [
+        "Clownfish",
+        "Shark",
+        "Dolphin",
+        "Tuna"
+      ]
+    },
+    "Who voiced Po in Kung Fu Panda?": {
+      "answers": [
+        "Jack Black",
+        "Lebron James",
+        "Chris Pratt",
+        "Dwayne the Rock Johnson"
+      ]
+    },
+    "In the Shrek movie, what type of creature is Shrek?": {
+      "answers": [
+        "Ogre",
+        "Dragon",
+        "Wizard",
+        "Knight"
+      ]
+    },
+    "Who provides the iconic singing voice for the main character in Disney's Mulan?": {
+      "answers": [
+        "Lea Salonga",
+        "Christina Aguilera",
+        "Jodi Benson",
+        "Ming-Na Wen"
+      ]
+    },
+    "Which Disney film features a young Polynesian girl who sets sail across the ocean to save her people?": {
+      "answers": [
+        "Moana",
+        "Pocahontas",
+        "Princess and the Frog",
+        "Raya and the Last Dragon"
+      ]
+    }
+  }
+}
