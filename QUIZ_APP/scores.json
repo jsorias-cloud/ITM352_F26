@@ -36,6 +36,27 @@
                     "total": 5
                 }
             ]
+        },
+        "ate": {
+            "password": "ate1",
+            "high_score": 5,
+            "history": [
+                {
+                    "category": "Art",
+                    "score": 3,
+                    "total": 5
+                },
+                {
+                    "category": "K-POP",
+                    "score": 5,
+                    "total": 5
+                },
+                {
+                    "category": "Movies",
+                    "score": 5,
+                    "total": 5
+                }
+            ]
         }
     }
 }
