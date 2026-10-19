@@ -16,8 +16,9 @@ weekly_steps = {
 }
 
 
+#gold needed to have >= since it includes 10000
 def choose_badge(average):
-   if average > 10000:
+   if average >= 10000:
        return "Gold"
    elif average >= 7500:
        return "Silver"
@@ -25,11 +26,22 @@ def choose_badge(average):
        return "Bronze"
 
 
-total = 0
-for name in weekly_steps:
-   days = weekly_steps[name]
-   for steps in days:
+def average(steps):
+    total = 0
+    for name in weekly_steps:
+       days = weekly_steps[name]
+    for steps in days:
        total += steps
-   average = total / len(days)
-   badge = choose_badge(average)
-   print(name.ljust(8), "average:", format(average, ",.0f"), "steps/day ->", badge)
+
+
+#total needed to be in the for loop to reset the total for each person
+# to 0 or it would just keep adding to the previous total
+
+for name in weekly_steps: 
+    total = 0
+    days = weekly_steps[name]
+    for steps in days:
+        total += steps
+    avg = total / len(days)
+    badge = choose_badge(avg)
+    print(f"{name} averaged {avg:.2f} steps per day and earned a {badge} badge.")
