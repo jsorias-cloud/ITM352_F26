@@ -1,10 +1,9 @@
-# Open a file and read its content 
+# Open a file and read its contents
 
-with open("names.txt","r") as file_object:
-    content = file_object.read()
-    print(content)
-    content_list = content.split("\n")
-    #split can be used to split a string by a specified character and return a list of the resulting substrings
-    print(f"Number of names: {len(content_list)} ")
-    for name in content_list:
+with open("names.txt", "r") as file_object:
+    contents = file_object.read()
+    print(contents)
+    contents_list = contents.splitlines()
+    print(f"Number of names: {len(contents_list)}")
+    for name in contents_list:
         print(name)
