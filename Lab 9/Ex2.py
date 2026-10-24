@@ -1,7 +1,7 @@
 # Read a CSV file containing window cleaning employee data and compute salary statistics.
 
 import csv
-csv_filename = "window_cleaning_employees.csv"
+csv_filename = "Target_employee_sample.csv"
 salaries = []
 
 # Read the CSV file and store the salaries in a list

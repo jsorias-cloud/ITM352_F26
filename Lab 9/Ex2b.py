@@ -5,19 +5,19 @@ import csv
 import os
 
 # Check if the file exists and is readable
-if not os.path.exists("window_cleaning_employees.csv"):
-    print(f"Error: File window_cleaning_employees.csv not found.")
+if not os.path.exists("Target_employee_sample.csv"):
+    print(f"Error: File Target_employee_sample.csv not found.")
     exit(1)
 
-if not os.access("window_cleaning_employees.csv", os.R_OK):
+if not os.access("Target_employee_sample.csv", os.R_OK):
     print("Error: File is not readable.")
     exit(1)
 else:
-    file_size = os.path.getsize("window_cleaning_employees.csv")
+    file_size = os.path.getsize("Target_employee_sample.csv")
     print(f"File exists and is readable. Size: {file_size} bytes.")
 
 
-csv_filename = "window_cleaning_employees.csv"
+csv_filename = "Target_employee_sample.csv"
 salaries = []
 
 # Read the CSV file and store the salaries in a list
