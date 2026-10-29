@@ -1,5 +1,4 @@
-# Create a dataframe from a dictionary 
-
+# Create a dataframe from a dictionary
 import pandas as pd
 
 data = {
@@ -9,10 +8,8 @@ data = {
    'Salary': [70000, 80000, 120000, 90000, 60000]
 }
 
-# Convert the dictionary to a DataFrame 
+# Convert the dictionary to a DataFrame
 df = pd.DataFrame(data)
 
-# Display the DataFrame 
+# Display the DataFrame
 print(df)
-
-

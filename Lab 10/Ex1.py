@@ -11,16 +11,20 @@ hh_income = [
     (60, 79542),
     (70, 100162),
     (80, 130000),
-    (90, 184292)
+    (90, 184292),
 ]
 
 hh_income_array = np.array(hh_income)
+
+# report the dimensions of the array and the number of elements in the array
 print(f"Dimensions of the array: {hh_income_array.ndim}")
 print(f"Number of elements in the array: {hh_income_array.size}")
 
 for i in range(hh_income_array.shape[0]):
     percentile, income = hh_income_array[i]
-    print(f"Percentile: {percentile}, Income: ${income:,.2f}")
+    print(f"Percentile: {percentile}, Income: {income}")
 
 for i in range(hh_income_array.shape[0]):
     print(hh_income_array[i, 0], hh_income_array[i, 1])
+    
+        
