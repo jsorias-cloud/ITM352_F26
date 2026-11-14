@@ -18,7 +18,7 @@ def memes():
         return render_template('memes.html', meme_url=meme_url, subreddit=subreddit)
     except (requests.RequestException, KeyError, ValueError):
         # Network problem or unexpected data from the API
-        return render_template('memes.html', error="Couldn't load a meme. Trying again soon..."), 502
+        return render_template('memes.html', error="Couldn't load your meme. Trying again soon my bad..."), 502
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

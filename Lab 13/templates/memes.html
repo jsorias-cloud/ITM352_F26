@@ -4,3 +4,14 @@
    <meta http-equiv="refresh" content="10; url=http://127.0.0.1:5000" />
 </head>
 
+<body style="text-align: center; font-family: Arial, sans-serif;">
+    <h1>Memes'R'Us</h1>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <img src="{{ meme_url }}" alt="Wholesome meme" style="max-width: 90%; max-height: 70vh;">
+        <p>Source: r/{{ subreddit }}</p>
+    {% endif %}
+</body>
+</html>
