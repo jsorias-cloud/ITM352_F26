@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3f5fc">
+    <title>{% block page_title %}Quiz Lab{% endblock %} | Quiz Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="{{ url_for('index') }}" aria-label="Quiz Lab home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span class="brand-name">Quiz Lab<span class="brand-caption">A little challenge goes a long way</span></span>
+        </a>
+        <span class="header-note"><span class="status-dot"></span> Ready when you are</span>
+    </header>
+
+    <main id="main" class="main-content">
+        <div class="content-width">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer class="site-footer">Take your time. Trust what you know.</footer>
+</body>
+</html>

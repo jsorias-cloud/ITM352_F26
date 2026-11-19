@@ -1,0 +1,40 @@
+{
+    "users": {
+        "5f4428f48551479b9110152f74b94225": {
+            "name": "Jorryn",
+            "history": [
+                {
+                    "date": "2026-11-18 22:58",
+                    "category": "K-POP",
+                    "score": 3,
+                    "total": 5,
+                    "seconds": 62
+                }
+            ]
+        },
+        "fdc45916888b474f822ff5fa9dcc5bd7": {
+            "name": "Gianna",
+            "history": [
+                {
+                    "date": "2026-11-18 23:12",
+                    "category": "Movies",
+                    "score": 2,
+                    "total": 5,
+                    "seconds": 54
+                }
+            ]
+        },
+        "45376f576c6648bf9efa86e07c8b3f53": {
+            "name": "Rick",
+            "history": [
+                {
+                    "date": "2026-11-18 23:46",
+                    "category": "Art",
+                    "score": 1,
+                    "total": 5,
+                    "seconds": 21
+                }
+            ]
+        }
+    }
+}

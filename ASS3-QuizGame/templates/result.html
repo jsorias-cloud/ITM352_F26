@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block page_title %}Your results{% endblock %}
+
+{% block content %}
+<section class="panel result-panel">
+    <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> QUIZ COMPLETE · {{ category }}</p>
+    <div class="result-heading">
+        <div>
+            <h1>Nice work!</h1>
+            <p class="lead">{{ message }}</p>
+        </div>
+        <div class="result-score" aria-label="{{ percent }} percent">
+            <strong>{{ percent }}%</strong>
+            <span>YOUR SCORE</span>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card"><strong>{{ score }}<span>/{{ max_questions }}</span></strong><small>Correct</small></div>
+        <div class="stat-card"><strong>{{ incorrect }}</strong><small>To review</small></div>
+        <div class="stat-card"><strong>{{ seconds|duration }}</strong><small>Time taken</small></div>
+    </div>
+
+    {% if save_failed %}
+        <div class="alert" role="alert">Your result is shown, but it could not be saved to your history.</div>
+    {% endif %}
+
+    <section class="review-section" aria-labelledby="review-heading">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">KEEP LEARNING</p>
+                <h2 id="review-heading">Review your answers</h2>
+            </div>
+        </div>
+        {% if missed %}
+            <ul class="review-list">
+                {% for item in missed %}
+                    <li class="review-item">
+                        <h3>{{ item.question }}</h3>
+                        <p class="answer-line">Your answer <strong>{{ item.chosen }}</strong></p>
+                        <p class="answer-line">Correct answer <strong>{{ item.correct }}</strong></p>
+                        {% if item.explanation %}
+                            <p class="explanation">{{ item.explanation }}</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="all-correct">You got every question right. Excellent work!</p>
+        {% endif %}
+    </section>
+
+    <a class="button button-link" href="{{ url_for('index') }}">Choose another quiz <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

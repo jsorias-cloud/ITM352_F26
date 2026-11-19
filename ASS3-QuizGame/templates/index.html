@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block page_title %}Welcome{% endblock %}
+
+{% block content %}
+<section class="panel home-panel">
+    <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> YOUR NEXT QUIZ STARTS HERE</p>
+
+    {% if error %}
+        <div class="alert" role="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if user %}
+        <div class="welcome-row">
+            <div>
+                <h1>Welcome back, {{ user.name }}.</h1>
+                <p class="lead">Pick a topic and see what you know.</p>
+            </div>
+            <div class="hero-mark" aria-hidden="true">?</div>
+        </div>
+
+        <form class="start-form" action="{{ url_for('start') }}" method="post">
+            <label for="category">Choose a category</label>
+            <div class="form-row">
+                <select id="category" name="category" required>
+                    <option value="" selected disabled>Select a topic</option>
+                    {% for item in categories %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+                <button class="button" type="submit">Start quiz <span aria-hidden="true">→</span></button>
+            </div>
+        </form>
+
+        <form class="switch-user-form" action="{{ url_for('switch_user') }}" method="post">
+            <button class="text-button" type="submit">Not {{ user.name }}? Switch user</button>
+        </form>
+
+        {% if history %}
+            <section class="history-section" aria-labelledby="history-heading">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR PROGRESS</p>
+                        <h2 id="history-heading">Recent scores</h2>
+                    </div>
+                    <span class="history-count">{{ history|length }} result{% if history|length != 1 %}s{% endif %}</span>
+                </div>
+                <ul class="history-list">
+                    {% for entry in history %}
+                        <li class="history-item">
+                            <span class="history-topic">
+                                <strong>{{ entry.category }}</strong>
+                                <small>{{ entry.date }} · {{ entry.seconds|duration }}</small>
+                            </span>
+                            <span class="score-pill">{{ entry.score }}/{{ entry.total }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    {% else %}
+        <div class="welcome-row">
+            <div>
+                <h1>Curious what you know?</h1>
+                <p class="lead">Choose a topic, answer a few questions, and keep track of your progress.</p>
+            </div>
+            <div class="hero-mark" aria-hidden="true">?</div>
+        </div>
+
+        <form class="register-form" action="{{ url_for('register') }}" method="post">
+            <label for="name">First, what should we call you?</label>
+            <div class="form-row">
+                <input id="name" name="name" type="text" value="{{ name_value }}"
+                       maxlength="30" autocomplete="given-name" placeholder="Your name" required>
+                <button class="button" type="submit">Let's go <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="field-note">Your scores are saved in this browser so you can follow your progress.</p>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section class="panel error-panel">
+    <span class="error-mark" aria-hidden="true">!</span>
+    <p class="eyebrow">A QUICK DETOUR</p>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ message }}</p>
+    <a class="button button-link" href="{{ url_for('index') }}">Back to Quiz Lab <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

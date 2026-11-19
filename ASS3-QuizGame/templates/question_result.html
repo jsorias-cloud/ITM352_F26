@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block page_title %}Answer feedback{% endblock %}
+
+{% block content %}
+<section class="panel feedback-panel">
+    <div class="quiz-meta">
+        <span class="topic-pill">QUESTION {{ question_number }} OF {{ max_questions }}</span>
+        <span class="score-so-far">Score <strong>{{ score }}</strong></span>
+    </div>
+
+    {% if result.was_correct %}
+        <div class="feedback-banner feedback-correct">
+            <span class="feedback-icon" aria-hidden="true">✓</span>
+            <div><strong>That's right!</strong><span>You got this one.</span></div>
+        </div>
+    {% else %}
+        <div class="feedback-banner feedback-review">
+            <span class="feedback-icon" aria-hidden="true">↗</span>
+            <div><strong>Not quite this time</strong><span>Keep going—you've got this.</span></div>
+        </div>
+    {% endif %}
+
+    <div class="answer-summary">
+        <p class="eyebrow">THE QUESTION</p>
+        <h1>{{ result.question }}</h1>
+        {% if not result.was_correct %}
+            <p class="answer-line">Your answer <strong>{{ result.chosen }}</strong></p>
+        {% endif %}
+        <p class="answer-line">Correct answer <strong>{{ result.correct_answer }}</strong></p>
+        {% if result.explanation %}
+            <p class="explanation">{{ result.explanation }}</p>
+        {% endif %}
+    </div>
+
+    {% if is_last %}
+        <a class="button button-link button-wide" href="{{ url_for('result') }}">See your results <span aria-hidden="true">→</span></a>
+    {% else %}
+        <a class="button button-link button-wide" href="{{ url_for('quiz') }}">Next question <span aria-hidden="true">→</span></a>
+    {% endif %}
+</section>
+{% endblock %}

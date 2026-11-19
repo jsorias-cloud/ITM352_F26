@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ category }} quiz{% endblock %}
+
+{% block content %}
+<section class="panel quiz-panel">
+    <div class="quiz-meta">
+        <span class="topic-pill">{{ category }}</span>
+        <span class="question-count">QUESTION {{ question_number + 1 }} <span class="muted">/ {{ max_questions }}</span></span>
+    </div>
+
+    <div class="progress-track">
+        <progress aria-label="Quiz progress" min="1"
+                  max="{{ max_questions }}" value="{{ question_number + 1 }}"></progress>
+    </div>
+
+    {% if error %}
+        <div class="alert" role="alert">{{ error }}</div>
+    {% endif %}
+
+    <div class="question-heading">
+        <p class="eyebrow">TAKE YOUR BEST GUESS</p>
+        <h1>{{ question }}</h1>
+    </div>
+
+    <form class="answer-form" action="{{ url_for('quiz') }}" method="post">
+        <input type="hidden" name="question_number" value="{{ question_number }}">
+        <fieldset class="answer-fieldset">
+            <legend class="visually-hidden">Choose one answer</legend>
+            <div class="answer-options">
+                {% for option in options %}
+                    <label class="answer-option">
+                        <input type="radio" name="answer" value="{{ option }}" required>
+                        <span class="option-marker">{{ loop.index }}</span>
+                        <span class="option-text">{{ option }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+        </fieldset>
+        <button class="button button-wide" type="submit">Submit answer <span aria-hidden="true">→</span></button>
+    </form>
+</section>
+{% endblock %}

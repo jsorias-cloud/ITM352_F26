@@ -12,6 +12,6 @@ print(response_json)
 
 response_df = pd.DataFrame.from_records(response_json)
 response_df.columns = ["driver_type", "count"]
-response_df = response_df.sort_index("driver_type")
+response_df = response_df.set_index("driver_type")
 
 print(response_df)
