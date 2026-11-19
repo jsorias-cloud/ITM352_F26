@@ -3,22 +3,32 @@
 # Date: Nov. 13, 2026
 
 from flask import Flask, render_template, request, redirect, url_for
-
-# Global variables 
+ 
+# Global variables
 score = 0
-question_number = 0 
+question_number = 0
 questions = [
     {
-    
-    "question": "What is the capital of France?", 
-    "options": ["London", "Berlin", "Madrid", "Paris"]
-
-    },
+        "question": "What is the capital of France?",
+        "options": ["Madrid", "London", "Berlin", "Paris"]
+    },   
     {
         "question": "What planet is known as the Red Planet?",
-        "options": ["Venus", "Saturn", "Jupiter", "Mars"]}
-]
-
+        "options": ["Venus", "Saturn", "Jupiter", "Mars"]
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"]
+    },
+    {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": ["Charles Dickens", "Jane Austen", "Mark Twain", "William Shakespeare"]
+    },
+    {
+        "question": "What is the chemical symbol for gold?",
+        "options": ["Pb", "Ag", "Fe", "Au"]
+    }
+    ]
 max_questions = len(questions)
 
 app = Flask(__name__)
@@ -36,25 +46,26 @@ def quiz():
 
     if request.method == 'POST':
         # Capture the answer from the form
-        answer = request.form.get('answer') # a variable that flask creates to capture the answer from the form
+        answer = request.form.get('answer')
 
         # Check if the answer is correct
-        if answer == questions[question_number]['options'][-1]:  # Assuming the last option is the correct answer
-            score += 1 
+        if answer == questions[question_number]['options'][-1]:  # Assuming the last option is correct
+            score += 1
         question_number += 1
 
     if question_number < max_questions:
-        #render the next question
-        return  render_template('quiz.html',
-                                question=questions[question_number]['question'],
-                                question_number=question_number, 
-                                options=questions[question_number]['options'])
+        # Render the next question
+        return render_template('quiz.html', 
+                               question=questions[question_number]['question'], 
+                               question_number=question_number,
+                               options=questions[question_number]['options'])
     else:
-        # Quiz is over, show the score
+        # Quiz is over, redirect to the result page
         return render_template('result.html', score=score, max_questions=max_questions)
 
-@app.route('/result')
+@app.route('/result')   
 def result():
+    # Display the final score
     global score, max_questions
     return render_template('result.html', score=score, max_questions=max_questions)
 
@@ -63,4 +74,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
