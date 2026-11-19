@@ -16,4 +16,4 @@ for person in faculty:
     itm_names.append(person.text)
     print("faculty:", person.text)
 
-print("Total Faculty:", len) # not done yet , grab from kazman git
+print("Total Faculty:", len(faculty))
